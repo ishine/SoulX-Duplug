@@ -1,0 +1,28 @@
+seed: 42
+device: cuda
+precision: bf16
+
+glm_tokenizer_path: pretrain_models/glm-4-voice-tokenizer
+model_name: pretrain_models/Qwen3-1.7B-expand_vocab_v1
+lm_vocab_size: 151936
+
+enable_lora: true
+lora_r: 32
+lora_alpha: 64
+# init_ckpt_path_lora: pretrain_models/SoulX-Duplug/SoulX-Duplug-1.7B-zh-v0.pth
+init_ckpt_path_lora: pretrain_models/SoulX-Duplug/SoulX-Duplug-1.7B-Bilingual-v0.pth
+
+enable_cascade_asr: true
+max_wait_num: 5
+
+input:
+  chunk_size: 2560
+  audio_back_size: 15360
+  audio_ahead_size: 640
+  sample_rate: 16000
+  chunk_token_len_small: 2
+
+asr:
+  # model_name: sensevoice
+  model_name: paraformer
+  language: auto
