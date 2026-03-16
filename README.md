@@ -22,23 +22,24 @@
 
 
 ## ✨ Overview
-SoulX-Duplug is a **plug-and-play streaming semantic VAD model** designed for real-time full-duplex speech conversation. Through text-guided streaming state prediction, SoulX-Duplug enables low-latency, semantic-aware streaming dialogue management. We also release SoulX-Duplug-Eval, a complementary evaluation set for benchmarking full-duplex spoken dialogue systems. For more details, please refer to our paper. Both SoulX-Duplug and SoulX-Duplug-Eval are available on Hugging Face.
+SoulX-Duplug is a **plug-and-play streaming semantic VAD model** designed for real-time full-duplex speech conversation. Through text-guided streaming state prediction, SoulX-Duplug enables low-latency, semantic-aware streaming dialogue management. In addition to the core model, we also **open-source a [dialogue system](https://github.com/Soul-AILab/SoulX-Duplug/tree/dialogue-system) build on top of SoulX-Duplug**, which demonstrates the practicality of our model in real-world applications.
+
+To facilitate benchmarking and research in this area, we also release **[SoulX-Duplug-Eval](https://huggingface.co/datasets/Soul-AILab/SoulX-Duplug-Eval)**, a complementary evaluation set for benchmarking full-duplex spoken dialogue systems.
 
 
 
 ## 🔥 Demo
 
-
+Below is a demo of **full-duplex speech interaction** powered by SoulX-Duplug.
 https://github.com/user-attachments/assets/cf5b040e-bc87-4fa9-ae6f-669db80a49eb
 
+You can also try the **online interactive demo** here:
 
-
-Try SoulX-Duplug online on [this page](https://soulx-duplug.sjtuxlance.com/).
+👉 https://soulx-duplug.sjtuxlance.com/
 
 
 ## 🚀 News
 - 
-
 
 ## 🛠️ Install
 
@@ -95,7 +96,7 @@ git clone https://huggingface.co/Soul-AILab/SoulX-Duplug-0.6B pretrained_models
 
 
 ### Basic Usage
-We have wrapped the model as a server. You can simply start it with the following commands:
+We provide a streaming inference server for SoulX-Duplug. Start the server:
 ```bash
 bash run.sh
 ```
@@ -126,14 +127,9 @@ For usage (see [example_client.py](https://github.com/Soul-AILab/SoulX-Duplug/bl
 - **"blank"** indicates that the current unprocessed streaming input does not yet fill a full chunk; the server has cached the input and is waiting for the next query.
 
 
-
 ### Dialogue System
 
 We implemented a demo full-duplex spoken dialogue system based on SoulX-Duplug. See the [`dialogue-system` branch](https://github.com/Soul-AILab/SoulX-Duplug/blob/dialogue-system/dialogue_system/README.md) for the demo code.
-
-
-## 📌 TODOs
-- [ ] Publish the technical report.
 
 
 ## 🔖 Citation
@@ -144,8 +140,16 @@ coming soon
 ```
 
 ## 📜 License
-This project is licensed under the Apache 2.0 License.
+This project is licensed under the [Apache 2.0 License](LICENSE).
 
 
 ## 🙏 Acknowledgment
-Great thank is given to [QwenLM](https://github.com/QwenLM), [GLM-4-Voice](https://github.com/zai-org/GLM-4-Voice), [chinese_text_normalization](https://github.com/speechio/chinese_text_normalization), [Paraformer](https://github.com/modelscope/FunASR/wiki/paraformer), [Sensevoice](https://github.com/FunAudioLLM/SenseVoice), [ChatTTS](https://github.com/2noise/ChatTTS), [SoulX-Podcast](https://github.com/Soul-AILab/SoulX-Podcast), and [SLAM-LLM](https://github.com/X-LANCE/SLAM-LLM) for their open-source contribution.
+We thank the following open-source projects for their open-source contributions:
+
+- [QwenLM](https://github.com/QwenLM)
+- [GLM-4-Voice](https://github.com/zai-org/GLM-4-Voice)
+- [chinese_text_normalization](https://github.com/speechio/chinese_text_normalization)
+- [Paraformer](https://github.com/modelscope/FunASR/wiki/paraformer)
+- [Sensevoice](https://github.com/FunAudioLLM/SenseVoice)
+- [ChatTTS](https://github.com/2noise/ChatTTS)
+- [SLAM-LLM](https://github.com/X-LANCE/SLAM-LLM)
