@@ -137,6 +137,7 @@ We implemented a demo full-duplex spoken dialogue system based on SoulX-Duplug. 
 
 ## 📌 TODOs
 - [x] Publish the technical report.
+- [ ] Release evaluation scripts.
 
 
 ## 🔖 Citation
